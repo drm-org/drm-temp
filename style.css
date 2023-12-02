@@ -1,0 +1,46 @@
+@keyframes rotate {
+  0% {
+    transform: perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(0);
+  } 
+  100% {
+    transform: perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(-360deg);
+  } 
+}
+
+body { 
+  background: radial-gradient(200% 100% at bottom center,#5047ff,#e96fd7,#6400ac,#051330);
+  background-attachment: fixed; 
+  overflow: hidden;
+  user-select: none;
+}
+
+.logo {
+  position: fixed;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 110px;
+}
+
+#space {
+  transform: perspective(500px);
+  transform-style: preserve-3d;
+  position: absolute;
+  bottom: 0;
+  perspective-origin: 50% 100%;
+  left: 50%;
+  animation: rotate 400s infinite linear;
+}
+
+.star {
+  width: 2px;
+  height: 2px;
+  background:#F7F7B6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 0 0 -300px;
+  transform: translate3d(0,0,-300px);
+  backface-visibility: hidden;
+}
